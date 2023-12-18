@@ -234,6 +234,8 @@ func Main(opts ...Option) error {
 	mainHandler, drainer := mainHandler(d.Ctx, env, d.Transport, probe, stats, logger)
 	adminHandler := adminHandler(d.Ctx, logger, drainer)
 
+	logger.Info("Hello from a custom queue-proxy container!!!")
+
 	// Enable TLS server when activator server certs are mounted.
 	// At this moment activator with TLS does not disable HTTP.
 	// See also https://github.com/knative/serving/issues/12808.
